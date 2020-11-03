@@ -1,0 +1,24 @@
+<html>
+{% if template_name != "index" %}
+    {% set BASE_FOLDER = ".." %}
+{% else %}
+    {% set BASE_FOLDER = "." %}
+{% endif %}
+<head>
+    <link rel="stylesheet" href="{{BASE_FOLDER}}/static/bootstrap.min.css" integrity="">
+    <style>
+        .jumbotron img {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+{% include 'navbar.jinja2' %}
+
+<div class="jumbotron">
+{{content}}
+</div>
+
+{% include 'footer.jinja2' %}
+</body>
+</html>

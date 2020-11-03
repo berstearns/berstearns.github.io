@@ -1,0 +1,5 @@
+ipdb
+jinja2
+markdown2
+pytest
+.

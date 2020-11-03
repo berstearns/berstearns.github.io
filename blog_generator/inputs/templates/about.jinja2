@@ -1,0 +1,22 @@
+<html>
+{% if template_name != "index" %}
+    {% set BASE_FOLDER = ".." %}
+{% else %}
+    {% set BASE_FOLDER = "." %}
+{% endif %}
+<head>
+    <link rel="stylesheet" href="{{BASE_FOLDER}}/static/bootstrap.min.css" integrity="">
+</head>
+<title>About the Pr&ecirc;t-&agrave;-LLOD Project</title>
+<body>
+{% include 'navbar.jinja2' %}
+
+<div class="row">
+<div class="container">
+{{content}}
+</div>
+</div>
+
+{% include 'footer.jinja2' %}
+</body>
+</html>

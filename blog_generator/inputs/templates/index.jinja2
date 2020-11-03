@@ -1,0 +1,48 @@
+<html>
+{% if template_name != "index" %}
+    {% set BASE_FOLDER = ".." %}
+{% else %}
+    {% set BASE_FOLDER = "." %}
+{% endif %}
+<head>
+    <style></style>
+        <style>
+        .content {
+            height: fit-content;
+        }
+        .container {
+            margin-top: 10px;
+        }
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="{{BASE_FOLDER}}/static/bootstrap.min.css" integrity="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" 
+      type="image/png" 
+      href="{{BASE_FOLDER}}/static/cropped-logo-cut-final-32x32.png">
+    <title>Pr&ecirc;t-&agrave;-LLOD</title>
+
+</head>
+<body>
+{% include 'navbar.jinja2' %}
+
+{% if slug == "index" %}
+    <div class="jumbotron" style="background-image:url('{{BASE_FOLDER}}/static/website-new-banner.jpg');background-repeat:no-repeat;background-size:100%;height:320px;">
+</div>
+{% endif %}
+
+<div class="container">
+   <div class="row">
+    <div class="content jumbotron col-9">
+    {{content}}
+    </div>
+    {% include 'sidebar.jinja2' %}
+   </div>
+</div>
+
+{% include 'footer.jinja2' %}
+
+</body>
+</html>

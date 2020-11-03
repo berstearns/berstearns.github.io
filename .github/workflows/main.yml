@@ -1,0 +1,36 @@
+name: CI
+
+on: 
+    push:
+        branches: [ master ]
+        paths:
+              - 'blog_generator/inputs/**'
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            ref: master 
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+          architecture: x64
+      - run: |
+          rm -rf posts pages static index.html
+          cd blog_generator
+          python -m pip install -r requirements.txt -U
+          cd ..
+          python blog_generator/manage.py
+      - name: Commit report
+        run: |
+          git config --global user.name 'berstearns'
+          git config --global user.email 'bernardo.stearns@gmail.com'
+          git add index.html
+          git add posts
+          git add pages
+          git add static
+          git commit -am "[GITHUB ACTIONS] Automated blog generation"
+          git push -f origin master:ghpages 
