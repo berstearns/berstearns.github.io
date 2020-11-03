@@ -1,0 +1,320 @@
+<html>
+
+    
+
+<head>
+    <link rel="stylesheet" href="../static/bootstrap.min.css" integrity="">
+</head>
+<title>Pr&ecirc;t-&agrave;-LLOD Partners</title>
+<body>
+<head>
+    <style>
+        .navbar a:hover {
+          border-bottom: 3px solid red;
+          color: #333;
+        }
+        .navbar a {
+          text-transform:capitalize;
+          color: #333;
+        }
+        .navbar {
+          border-bottom: 1px dashed #aaa;
+          border-top: 1px dashed #aaa;
+          margin: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap.min.css" integrity="">
+</head>
+<nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="../index.html">
+    <img src="../static/img.jpg" alt="logo" style="height:100px">
+  </a>
+  
+  <!-- Links -->
+  <ul class="nav navbar-nav navbar-right">
+            
+      <li class="nav-item">
+          
+              <a class="nav-link" href="../pages/projects.html">projects</a>
+          
+        </li>
+            
+      <li class="nav-item">
+          
+              <a class="nav-link" href="../pages/about.html">About</a>
+          
+        </li>
+            
+      <li class="nav-item">
+          
+              <a class="nav-link" href="../pages/blog.html">blog</a>
+          
+        </li>
+            
+      <li class="nav-item">
+          
+              <a class="nav-link" href="../index.html">main page</a>
+          
+        </li>
+    
+  </ul>
+  </div>
+</nav>
+
+<div class="row">
+<div class="container">
+<h1>Pr&ecirc;t-&agrave;-LLOD Projects</h1>
+
+<p>Our projects are all available at <a href="https://github.com/pret-a-LLOD/">GitHub</a></p>
+
+<h2><a href="https://github.com/pret-a-LLOD/termitup">termitup</a></h2>
+
+<p>TermitUp is a tool for terminology enrichment: given a domain specific corpus, TermitUp performs statistical terminology extraction (with TBXTools) and cleans the resulting term list with a series of liguistic processes. Then, it queries several language resources (some part of the Linguistic Linked Open Data cloud) for candidate terms matching those in the term list.
+TermitUp builds sense indicators for both the source and the candidate terms, and performs a Word Sense Disambiguation process (with Semantic Web Company's service), matching those concepts with the closest domain. From the concepts matched in the external resources, TermitUp retrieves every piece of information available (translations, synonyms, definitions and terminological relations), already disambiguated, and enriches the source term lists, creating links amongst the resources in the LLOD.
+Afterwards, TermitUp offers the possibility of creating hierarchical relations amongst the terms in the source list and also of validating the synonymy relations retrieved from the external resources. Finally, the results are published in separate json-ld files, modeled in SKOS-XL, that permits keeping the provenance of specific pieces of the data retrieved.</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/teanga">teanga</a></h2>
+
+<p>Teanga is a command-line tool that automates and facilitates using sequences of containerized rest api as a workflow. It aims at creation of complex Natural Language Processing workflows using Airflow, OpenAPI specification and docker.</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/term-a-LLOD">term-a-LLOD</a></h2>
+
+<p>A system for transforming and publishing terminologies as linked data which relies on a virtualization approach (i.e. docker). The system simplifies the transformation and hosting of terminological resources. As a proof-of-concept we publish and link the well-known IATE terminology as well as to various smaller terminologies. The program is written in java.</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/pddm">pddm</a></h2>
+
+<p>Policy Driven Data Manager</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/CIDER-EM">CIDER-EM</a></h2>
+
+<p>Context and Inference baseD ontology alignER.
+CIDER-EM is a word-embedding-based system for monolingual and cross-lingual ontology alignment. Evolves the CIDER-CL tool by including the use of word embeddings.</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/linghub">linghub</a></h2>
+
+<p>linghub</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/ontology-lexicalization">ontology-lexicalization</a></h2>
+
+<p>The system extracts property lexicalization patterns from a set of annotated (i.e. DBpedia/Wikidata annotated) Corpora and to To extract RDF graph patterns corresponding to an ngram and develops a Lemon Lexicon. The program is developed using perl and java.</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/Fintan">Fintan</a></h2>
+
+<p>Flexible INtegrated Transformation and Annotation eNgineering platform</p>
+
+<h2><a href="https://github.com/pret-a-LLOD/PaL-Linking">PaL-Linking</a></h2>
+
+<p>Collection of components (submodules) that constitute the Prêt-à-LLOD linking framework</p>
+
+</div>
+</div>
+
+<head>
+<link rel="stylesheet" href="../static/bootstrap.min.css" integrity="">
+<style>
+        footer img {
+            margin-top: 2px;
+        }
+        .site-footer
+        {
+          border-top: 1px dashed #aaa;
+          padding:10px 0 10px;
+          font-size:15px;
+          line-height:24px;
+          color:#737373;
+        }
+        .site-footer hr
+        {
+          border-top-color:#bbb;
+          opacity:0.5
+        }
+        .site-footer h6
+        {
+          color:#fff;
+          font-size:16px;
+          text-transform:uppercase;
+          margin-top:5px;
+          letter-spacing:2px
+        }
+        .site-footer a
+        {
+          color:#737373;
+        }
+        .site-footer a:hover
+        {
+          color:#3366cc;
+          text-decoration:none;
+        }
+        .footer-links
+        {
+          padding-left:0;
+          list-style:none
+        }
+        .footer-links li
+        {
+          display:block
+        }
+        .footer-links a
+        {
+          color:#737373
+        }
+        .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+        {
+          color:#3366cc;
+          text-decoration:none;
+        }
+        .footer-links.inline li
+        {
+          display:inline-block
+        }
+        .site-footer .social-icons
+        {
+          text-align:right
+        }
+        .site-footer .social-icons a
+        {
+          width:40px;
+          height:40px;
+          line-height:40px;
+          margin-left:6px;
+          margin-right:0;
+          border-radius:100%;
+          background-color:#33353d
+        }
+        .copyright-text
+        {
+          margin:0
+        }
+        @media (max-width:991px)
+        {
+          .site-footer [class^=col-]
+          {
+            margin-bottom:30px
+          }
+        }
+        @media (max-width:767px)
+        {
+          .site-footer
+          {
+            padding-bottom:0
+          }
+          .site-footer .copyright-text,.site-footer .social-icons
+          {
+            text-align:center
+          }
+        }
+        .social-icons
+        {
+          padding-left:0;
+          margin-bottom:0;
+          list-style:none
+        }
+        .social-icons li
+        {
+          display:inline-block;
+          margin-bottom:4px
+        }
+        .social-icons li.title
+        {
+          margin-right:15px;
+          text-transform:uppercase;
+          color:#96a2b2;
+          font-weight:700;
+          font-size:13px
+        }
+        .social-icons a{
+          background-color:#eceeef;
+          color:#818a91;
+          font-size:16px;
+          display:inline-block;
+          line-height:44px;
+          width:44px;
+          height:44px;
+          text-align:center;
+          margin-right:8px;
+          border-radius:100%;
+          -webkit-transition:all .2s linear;
+          -o-transition:all .2s linear;
+          transition:all .2s linear
+        }
+        .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+        {
+          color:#fff;
+          background-color:#29aafe
+        }
+        .social-icons.size-sm a
+        {
+          line-height:34px;
+          height:34px;
+          width:34px;
+          font-size:14px
+        }
+        .social-icons a.facebook:hover
+        {
+          background-color:#3b5998
+        }
+        .social-icons a.twitter:hover
+        {
+          background-color:#00aced
+        }
+        .social-icons a.linkedin:hover
+        {
+          background-color:#007bb6
+        }
+        .social-icons a.dribbble:hover
+        {
+          background-color:#ea4c89
+        }
+        @media (max-width:767px)
+        {
+          .social-icons li.title
+          {
+            display:block;
+            margin-right:0;
+            font-weight:600
+          }
+        }
+</style> 
+</head>
+<footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-8">
+            <h6>Partners</h6>
+            <a href="https://www.uni-bielefeld.de/"><img src="../static/bielefeld-logo-600x220.jpg" alt="Bielefeld University" style="height:50px"></a>
+            <a href="https://derilinx.com/"><img src="../static/Derilinx-Logo-600x220.jpg" alt="Derilinx" style="height:50px"></a>
+            <a href="https://www.dfki.de/web/"><img src="../static/DFKI-logo-600x220.jpg" alt="DFKI GmbH" style="height:50px"></a>
+            <a href="https://www.goethe-university-frankfurt.de/en?locale=en"><img src="../static/Goethe-University-Frankfurt-logo-600x220.jpg" alt="Goethe University Frankfurt" style="height:50px"></a>
+            <a href="http://www.nuigalway.ie/"><img src="../static/NUIG-logo-600x220.jpg" alt="NUI Galway" style="height:50px"></a>
+            <a href="https://global.oup.com/"><img src="../static/OUP-logo-600x220.jpg" alt="Oxford University Press" style="height:50px"></a>
+            <a href="https://www.semalytix.com/"><img src="../static/symalytics-logo-1-600x220.jpg" alt="Semalytix" style="height:50px"></a>
+            <a href="https://www.unizar.es/"><img src="../static/universidad-de-zaragoza-logo-600x220.jpg" alt="University of Zaragoza" style="height:50px"></a>
+            <a href="https://www.upm.es/"><img src="../static/UPM-logo-600x220.jpg" alt="Polytechnic University of Madrid" style="height:50px"></a>
+            <a href="https://semantic-web.com/"><img src="../static/swc-logo-600x220.jpg" alt="Semantic Web Company" style="height:50px"></a>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <img src="../static/horizon2020-eu-commission-logo-200.png" alt="Horizon 2020">
+            <p>This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 825182.</p>
+          </div>
+
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+         <a href="#">Pr&ecirc;t-&agrave;-LLOD Project</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+</body>
+</html>
