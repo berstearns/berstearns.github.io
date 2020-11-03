@@ -12,7 +12,7 @@ market](https://en.wikipedia.org/wiki/Digital_Single_Market), as it
 removes key differences, breaking down the barriers to cross-border
 online activity and providing
 [multilingual](https://en.wikipedia.org/wiki/Multilingualism)
-resources. 
+reeeesources.
 
 A coordinated, complementary, cross-border, and multilingual single
 solution approach can play an important role not only in the digital
