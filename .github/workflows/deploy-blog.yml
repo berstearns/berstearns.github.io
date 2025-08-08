@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -7,38 +7,23 @@ on:
       - 'build/**'
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true  # Changed to true to cancel previous deployments
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      # Verify the build directory exists (debugging step)
+
+      # Debug: Verify build directory exists
       - name: List files
-        run: ls -la
-      
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        # Remove the static_site_generator parameter as it's not needed
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'build/'  # Make sure this path exists
-          
+        run: |
+          ls -la
+          ls -la build/
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          keep_files: false  # Clean existing files before deploy
+          force_orphan: true  # Single commit in gh-pages branch
