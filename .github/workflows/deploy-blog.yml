@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true  # Changed to true to cancel previous deployments
 
 jobs:
   deploy:
@@ -25,18 +25,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Important if you need the full history for build scripts
-          
-      - name: Setup Pages
+        
+      # Verify the build directory exists (debugging step)
+      - name: List files
+        run: ls -la
+      
+      - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: "none"  # Explicitly set since you're deploying pre-built files
-          
+        # Remove the static_site_generator parameter as it's not needed
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build/'  # Explicitly target the build directory
+          path: 'build/'  # Make sure this path exists
           
       - name: Deploy to GitHub Pages
         id: deployment
