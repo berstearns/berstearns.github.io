@@ -1,0 +1,6 @@
+site_name: Bernardo Stearns Blog
+docs_dir: src
+site_dir: build
+theme:
+  name: dracula
+  favicon: assets/luffyfavicon.ico
