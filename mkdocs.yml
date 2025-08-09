@@ -4,3 +4,9 @@ site_dir: docs
 theme:
   name: dracula
   favicon: assets/luffyfavicon.ico
+exclude_docs: |
+  api-config.json    # A file with this name anywhere.
+  /requirements.txt  # Top-level "docs/requirements.txt".
+  *.jinja2
+  *.py               # Any file with this extension anywhere.
+  !/foo/example.py   # But keep this particular file.
