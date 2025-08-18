@@ -10,3 +10,9 @@ exclude_docs: |
   *.jinja2
   *.py               # Any file with this extension anywhere.
   !/foo/example.py   # But keep this particular file.
+plugins:
+  - markmap:
+      base_path: mindmaps 
+      encoding: utf-8
+      file_extension: .mm.md
+
