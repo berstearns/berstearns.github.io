@@ -1,26 +1,26 @@
 /* Dracula color scheme for mkdocs-material */
-/* Maps Dracula palette onto material's CSS custom properties */
 
 [data-md-color-scheme="dracula"] {
-  /* Primary Dracula colors */
-  --md-primary-fg-color: #bd93f9;          /* Purple */
-  --md-primary-fg-color--light: #bd93f9;
-  --md-primary-fg-color--dark: #6272a4;    /* Comment */
-  --md-primary-bg-color: #282a36;          /* Background */
+  /* Header & tabs: dark bg with bright text */
+  --md-primary-fg-color: #282a36;
+  --md-primary-fg-color--light: #343746;
+  --md-primary-fg-color--dark: #21222c;
+  --md-primary-bg-color: #f8f8f2;
+  --md-primary-bg-color--light: rgba(248, 248, 242, 0.7);
 
   /* Accent */
-  --md-accent-fg-color: #ff79c6;           /* Pink */
+  --md-accent-fg-color: #ff79c6;
   --md-accent-fg-color--transparent: rgba(255, 121, 198, 0.1);
   --md-accent-bg-color: #ff79c6;
 
-  /* Default (body) */
-  --md-default-fg-color: #f8f8f2;          /* Foreground */
-  --md-default-fg-color--light: #bfbfbf;
-  --md-default-fg-color--lighter: #6272a4; /* Comment */
-  --md-default-fg-color--lightest: #44475a;/* Current Line */
-  --md-default-bg-color: #282a36;          /* Background */
+  /* Body */
+  --md-default-fg-color: #f8f8f2;
+  --md-default-fg-color--light: #ccc;
+  --md-default-fg-color--lighter: #999;
+  --md-default-fg-color--lightest: rgba(248, 248, 242, 0.12);
+  --md-default-bg-color: #282a36;
   --md-default-bg-color--light: #343746;
-  --md-default-bg-color--lighter: #44475a; /* Current Line */
+  --md-default-bg-color--lighter: #3e4153;
   --md-default-bg-color--lightest: #44475a;
 
   /* Code */
@@ -28,13 +28,62 @@
   --md-code-bg-color: #44475a;
   --md-code-hl-color: rgba(255, 121, 198, 0.15);
 
-  /* Typeset (links) */
-  --md-typeset-a-color: #8be9fd;           /* Cyan */
+  /* Links */
+  --md-typeset-a-color: #8be9fd;
 
   /* Footer */
   --md-footer-bg-color: #21222c;
   --md-footer-bg-color--dark: #191a21;
   --md-footer-fg-color: #f8f8f2;
-  --md-footer-fg-color--light: #6272a4;
-  --md-footer-fg-color--lighter: #44475a;
+  --md-footer-fg-color--light: #999;
+  --md-footer-fg-color--lighter: #666;
+}
+
+/* ── Category color badges on blog posts ── */
+
+/* Papers posts: cyan accent */
+.md-post[data-category="Papers"] .md-post__meta,
+article:has(.md-tag[href*="papers"]) .md-post__meta {
+  border-left: 3px solid #8be9fd;
+  padding-left: 0.6em;
+}
+
+/* General posts: pink accent */
+.md-post[data-category="General"] .md-post__meta,
+article:has(.md-tag[href*="general"]) .md-post__meta {
+  border-left: 3px solid #ff79c6;
+  padding-left: 0.6em;
+}
+
+/* Category tag pills */
+a.md-tag {
+  font-weight: 600;
+}
+
+/* Papers tag: cyan */
+a.md-tag[href*="papers" i] {
+  background-color: rgba(139, 233, 253, 0.15);
+  color: #8be9fd;
+  border: 1px solid rgba(139, 233, 253, 0.3);
+}
+
+/* General tag: pink */
+a.md-tag[href*="general" i] {
+  background-color: rgba(255, 121, 198, 0.15);
+  color: #ff79c6;
+  border: 1px solid rgba(255, 121, 198, 0.3);
+}
+
+/* Learning tag: green */
+a.md-tag[href*="learning" i] {
+  background-color: rgba(80, 250, 123, 0.15);
+  color: #50fa7b;
+  border: 1px solid rgba(80, 250, 123, 0.3);
+}
+
+/* NLP tag: purple */
+a.md-tag[href*="nlp" i] {
+  background-color: rgba(189, 147, 249, 0.15);
+  color: #bd93f9;
+  border: 1px solid rgba(189, 147, 249, 0.3);
 }

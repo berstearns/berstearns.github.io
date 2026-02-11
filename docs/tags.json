@@ -1,1 +1,1 @@
-{"mappings": []}
+{"mappings": [{"item": {"url": "blog/learning-low-level-programming/", "title": "Learning Low-Level Programming"}, "tags": ["low-level programming"]}, {"item": {"url": "blog/learning-pytorch--a-roadmap/", "title": "Learning PyTorch \u2014 A Roadmap"}, "tags": ["PyTorch"]}, {"item": {"url": "blog/smollm2-when-smol-goes-big--data-centric-training-of-a-small-language-model/", "title": "smolLM2: When Smol Goes Big \u2014 Data-Centric Training of a Small Language Model"}, "tags": ["NLP, LLM"]}]}
