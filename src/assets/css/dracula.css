@@ -39,20 +39,32 @@
   --md-footer-fg-color--lighter: #666;
 }
 
-/* ── Category color badges on blog posts ── */
+/* ── Post card backgrounds by category ── */
 
-/* Papers posts: cyan accent */
-.md-post[data-category="Papers"] .md-post__meta,
-article:has(.md-tag[href*="papers"]) .md-post__meta {
-  border-left: 3px solid #8be9fd;
-  padding-left: 0.6em;
+article.md-post {
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  margin-bottom: 1.2em;
+  border-left: 3px solid #6272a4;
+  background-color: rgba(68, 71, 90, 0.3);
 }
 
-/* General posts: pink accent */
-.md-post[data-category="General"] .md-post__meta,
-article:has(.md-tag[href*="general"]) .md-post__meta {
+/* Papers: cyan tint */
+article.md-post:has(.md-meta__link[href*="papers"]) {
+  background-color: rgba(139, 233, 253, 0.07);
+  border-left: 3px solid #8be9fd;
+}
+
+/* Learning: green tint */
+article.md-post:has(.md-meta__link[href*="learning"]) {
+  background-color: rgba(80, 250, 123, 0.07);
+  border-left: 3px solid #50fa7b;
+}
+
+/* General: pink tint */
+article.md-post:has(.md-meta__link[href*="general"]) {
+  background-color: rgba(255, 121, 198, 0.07);
   border-left: 3px solid #ff79c6;
-  padding-left: 0.6em;
 }
 
 /* Category tag pills */
