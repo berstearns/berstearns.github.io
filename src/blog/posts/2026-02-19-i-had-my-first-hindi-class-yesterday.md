@@ -4,10 +4,12 @@ authors:
   - bernardo
 categories:
   - General
+  - Hindi
+  - Learning
 private: true
 comments: true
 ---
-# Private Test Post
+# my first hindi class 
 
 This is a dummy post to test the `private: true` feature.
 
