@@ -5,6 +5,8 @@ authors:
 categories:
   - General
 draft: true
+private: true
+comments: true
 ---
 # What I see today
 I see myself in a few scenarios when interacting with llms for programming and I want to reason how to improve them;

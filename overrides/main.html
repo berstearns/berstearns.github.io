@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page and page.meta and page.meta.private %}
+    <meta name="private-code" content="{{ config.extra.private_code }}">
+    <script src="{{ 'assets/js/private-gate.js' | url }}"></script>
+  {% endif %}
+{% endblock %}

@@ -6,6 +6,7 @@ site_dir: docs
 theme:
   name: material
   favicon: assets/luffyfavicon.ico
+  custom_dir: overrides
   palette:
     scheme: dracula
   features:
@@ -14,6 +15,9 @@ theme:
     - navigation.top
     - search.highlight
     - content.code.copy
+
+extra:
+  private_code: "opensesame"
 
 extra_css:
   - assets/css/dracula.css
