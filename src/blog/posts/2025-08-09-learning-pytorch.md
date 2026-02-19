@@ -6,6 +6,7 @@ categories:
   - Learning
 tags:
   - PyTorch
+comments: true
 ---
 
 # Learning PyTorch — A Roadmap

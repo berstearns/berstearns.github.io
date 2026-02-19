@@ -4,6 +4,7 @@ authors:
   - bernardo
 categories:
   - General
+comments: true
 ---
 
 # First Post

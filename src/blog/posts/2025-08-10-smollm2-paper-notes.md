@@ -6,6 +6,7 @@ categories:
   - Papers
 tags:
   - NLP, LLM
+comments: true
 ---
 
 # smolLM2: When Smol Goes Big — Data-Centric Training of a Small Language Model

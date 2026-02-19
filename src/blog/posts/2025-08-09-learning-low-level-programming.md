@@ -6,6 +6,7 @@ categories:
   - Learning
 tags:
   - low-level programming
+comments: true
 ---
 
 # Learning Low-Level Programming

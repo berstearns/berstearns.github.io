@@ -99,3 +99,94 @@ a.md-tag[href*="nlp" i] {
   color: #bd93f9;
   border: 1px solid rgba(189, 147, 249, 0.3);
 }
+
+/* ── Private post gate overlay ── */
+
+.private-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(40, 42, 54, 0.96);
+}
+
+.private-gate__box {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  background: #343746;
+  border: 1px solid #6272a4;
+  min-width: 300px;
+}
+
+.private-gate__icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.private-gate__label {
+  color: #f8f8f2;
+  font-size: 1.1rem;
+  margin: 0 0 1.2rem;
+}
+
+.private-gate__input {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #6272a4;
+  border-radius: 6px;
+  background: #282a36;
+  color: #f8f8f2;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.private-gate__input:focus {
+  border-color: #bd93f9;
+}
+
+.private-gate__btn {
+  display: inline-block;
+  padding: 0.55rem 1.6rem;
+  border: none;
+  border-radius: 6px;
+  background: #bd93f9;
+  color: #282a36;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.private-gate__btn:hover {
+  background: #caa8ff;
+}
+
+/* Shake animation on wrong code */
+@keyframes private-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-10px); }
+  40%      { transform: translateX(10px); }
+  60%      { transform: translateX(-6px); }
+  80%      { transform: translateX(6px); }
+}
+
+.private-gate__shake {
+  animation: private-shake 0.4s ease;
+}
+
+/* Lock badge on post cards */
+.md-private {
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  border-radius: 3px;
+  background: rgba(189, 147, 249, 0.15);
+  color: #bd93f9;
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
