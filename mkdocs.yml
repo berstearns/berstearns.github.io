@@ -16,6 +16,9 @@ theme:
     - search.highlight
     - content.code.copy
 
+hooks:
+  - hooks/hide_private.py
+
 extra:
   private_code: "opensesame"
 
