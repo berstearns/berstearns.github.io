@@ -90,6 +90,47 @@ EOF
     echo ":: created $filepath"
 }
 
+cmd_publish() {
+    local target="${1:-}"
+    cd "$SCRIPT_DIR"
+
+    local drafts
+    drafts="$(grep -l '^draft:[[:space:]]*[tT]rue[[:space:]]*$' "${CFG[posts_dir]}"/*.md 2>/dev/null || true)"
+
+    if [[ -z "$drafts" ]]; then
+        echo ":: no drafts found"
+        return 0
+    fi
+
+    local picked
+    if [[ -n "$target" ]]; then
+        picked="$(echo "$drafts" | grep -i -- "$target" || true)"
+        local count
+        count="$(printf '%s\n' "$picked" | grep -c . || true)"
+        if [[ "$count" -eq 0 ]]; then
+            echo ":: no draft matches '$target'"
+            echo ":: available drafts:"
+            echo "$drafts" | sed 's|^|  |'
+            return 1
+        elif [[ "$count" -gt 1 ]]; then
+            echo ":: '$target' matches multiple drafts, be more specific:"
+            echo "$picked" | sed 's|^|  |'
+            return 1
+        fi
+    else
+        if ! command -v fzf >/dev/null; then
+            echo ":: fzf not installed (pacman -S fzf)"
+            return 1
+        fi
+        picked="$(echo "$drafts" | fzf --prompt='publish draft > ' --height=40% --reverse)" || return 0
+    fi
+
+    [[ -z "$picked" ]] && { echo ":: cancelled"; return 0; }
+
+    sed -i '/^draft:[[:space:]]*[tT]rue[[:space:]]*$/d' "$picked"
+    echo ":: published $picked"
+}
+
 cmd_help() {
     cat <<EOF
 usage: blog.sh <command> [args]
@@ -99,9 +140,10 @@ commands:
   serve [on|off]     local preview (drafts on/off, default: on)
   deploy [msg]       build + commit + push (default msg: "update blog")
   new "title" [cat]  create a new post (default category: General)
+  publish [name]     remove "draft: true" from a post (interactive fzf if no name)
   help               show this message
 
-categories: General, Papers, Learning
+categories: General, Papers, Learning, Hindi
 EOF
 }
 
@@ -115,8 +157,9 @@ main() {
         build)  cmd_build "$@" ;;
         serve)  cmd_serve "$@" ;;
         deploy) cmd_deploy "$@" ;;
-        new)    cmd_new "$@" ;;
-        help)   cmd_help ;;
+        new)     cmd_new "$@" ;;
+        publish) cmd_publish "$@" ;;
+        help)    cmd_help ;;
         *)      echo "unknown command: $cmd"; cmd_help; exit 1 ;;
     esac
 }
