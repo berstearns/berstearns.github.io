@@ -7,7 +7,6 @@ search:
 
 # notes
 
-unlisted posts.
+unlisted posts. auto-generated at build time from every post with `private: true`.
 
-- [my first hindi class](../blog/my-first-hindi-class/) — 2026-02-19
-- [second class](../blog/second-class/) — 2026-02-20
+<ul id="private-posts-list"></ul>

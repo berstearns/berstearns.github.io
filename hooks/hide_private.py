@@ -11,6 +11,7 @@ import os
 import re
 
 _hidden_urls: set[str] = set()
+_private_posts: list[dict] = []
 
 
 def on_page_context(context, page, config, nav, **kwargs):
@@ -22,6 +23,12 @@ def on_page_context(context, page, config, nav, **kwargs):
 def on_page_markdown(markdown, page, config, files, **kwargs):
     if page.meta.get("private") or page.meta.get("noindex"):
         _hidden_urls.add("/" + page.url.lstrip("/"))
+    if page.meta.get("private"):
+        _private_posts.append({
+            "url": "/" + page.url.lstrip("/"),
+            "title": page.title or page.meta.get("title", "(untitled)"),
+            "date": str(page.meta.get("date", ""))[:10],
+        })
     return markdown
 
 
@@ -47,9 +54,29 @@ def _strip_blocks(xml: str, tag: str, urls: set[str]) -> str:
 
 
 def on_post_build(config, **kwargs):
+    site_dir = config["site_dir"]
+
+    zenitsu = os.path.join(site_dir, "zenitsu", "index.html")
+    if os.path.exists(zenitsu):
+        posts = sorted(_private_posts, key=lambda p: p["date"], reverse=True)
+        items = "\n".join(
+            f'<li><a href="{p["url"]}">{p["title"]}</a> &mdash; {p["date"]}</li>'
+            for p in posts
+        ) or "<li><em>no private posts yet</em></li>"
+        with open(zenitsu, "r", encoding="utf-8") as f:
+            html = f.read()
+        html = re.sub(
+            r'<ul id="private-posts-list">.*?</ul>',
+            f'<ul id="private-posts-list">\n{items}\n</ul>',
+            html,
+            count=1,
+            flags=re.DOTALL,
+        )
+        with open(zenitsu, "w", encoding="utf-8") as f:
+            f.write(html)
+
     if not _hidden_urls:
         return
-    site_dir = config["site_dir"]
 
     for feed in ("feed_rss_created.xml", "feed_rss_updated.xml"):
         path = os.path.join(site_dir, feed)
