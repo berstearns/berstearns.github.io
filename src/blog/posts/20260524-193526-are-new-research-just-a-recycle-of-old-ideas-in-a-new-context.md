@@ -33,3 +33,5 @@ the exception, and even it stands on a stack of recontextualized old ones.
 
 Worth keeping in mind next time I feel like I haven't had an "original" idea:
 the value might be in spotting *which old idea belongs in this new context*.
+
+Something of less wide interest, my phd topic, making llms
