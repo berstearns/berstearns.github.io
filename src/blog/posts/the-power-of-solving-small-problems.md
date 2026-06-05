@@ -4,6 +4,5 @@ authors:
   - bernardo
 categories:
   - General
-draft: true
 comments: true
 ---
