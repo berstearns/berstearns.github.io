@@ -23,3 +23,7 @@ slug: what-i-have-done-today-2026-07-23
   class additive_bias(logits, )
   
   ```
+  - lora delta
+  - 
+  -
+  -

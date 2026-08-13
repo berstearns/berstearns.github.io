@@ -1,0 +1,239 @@
+/* ── Portfolio page ── */
+
+/* Widen the content area: the portfolio is a two-column layout */
+.md-content__inner:has(.portfolio) {
+  max-width: none;
+}
+
+/* Hide the auto-generated H1 + edit button noise on this page */
+.portfolio-page .md-content__inner > h1 {
+  display: none;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.2rem;
+  align-items: start;
+  margin: 1rem 0 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: sticky;
+  top: 5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .portfolio__aside {
+    position: static;
+  }
+}
+
+/* ── Cards ── */
+
+.pf-card {
+  background: #343746;
+  border: 1px solid rgba(98, 114, 164, 0.35);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+
+.pf-card__title {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #f8f8f2;
+}
+
+/* ── Profile ── */
+
+.pf-profile {
+  text-align: center;
+}
+
+.pf-profile__avatar {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff79c6;
+  padding: 4px;
+  background: #282a36;
+}
+
+.pf-profile__name {
+  margin: 1rem 0 0.3rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f8f8f2;
+}
+
+.pf-profile__tagline {
+  margin: 0;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.85rem;
+  color: #bdc3d4;
+}
+
+/* ── Info rows ── */
+
+.pf-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.pf-info__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.8rem;
+}
+
+.pf-info__key {
+  color: #bdc3d4;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pf-info__val {
+  overflow-wrap: anywhere;
+}
+
+.pf-info__val a {
+  color: #8be9fd;
+}
+
+/* ── Tech stack pills ── */
+
+.pf-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.pf-stack__item {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(255, 121, 198, 0.15);
+  color: #ff79c6;
+  border: 1px solid rgba(255, 121, 198, 0.35);
+}
+
+/* ── Projects ── */
+
+.pf-projects__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.pf-projects__head h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8f8f2;
+}
+
+.pf-projects__head h2::before {
+  content: none;
+}
+
+.pf-projects__all {
+  font-size: 0.8rem;
+  color: #8be9fd;
+}
+
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.pf-repo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: #343746;
+  border: 1px solid rgba(98, 114, 164, 0.35);
+  border-radius: 12px;
+  padding: 1.3rem;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.pf-repo:hover {
+  border-color: #ff79c6;
+  transform: translateY(-2px);
+}
+
+.pf-repo__name {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f8f8f2;
+}
+
+.pf-repo:hover .pf-repo__name {
+  color: #ff79c6;
+}
+
+.pf-repo__desc {
+  flex: 1;
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #bdc3d4;
+}
+
+.pf-repo__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #bdc3d4;
+}
+
+.pf-repo__stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.pf-repo__lang {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.pf-repo__dot {
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  background: #6272a4;
+}
+
+.pf-status {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #bdc3d4;
+}
