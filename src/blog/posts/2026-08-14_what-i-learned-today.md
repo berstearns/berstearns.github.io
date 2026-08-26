@@ -17,4 +17,8 @@ slug: what-i-learned-today-2026-08-14
       - the process of picking a main character -> pick coadjuvants and for every pair create a story in a location 
       - zyxwvutspkromnlkjihgfedcba
 - the art of doing hard things
+- meeting with industry partner today
+ - creating explicit good long term relationships
+- meeting with PI 
+ - 
 
