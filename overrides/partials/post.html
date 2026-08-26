@@ -1,7 +1,9 @@
 {#-
-  Post card partial — adds lock badge for private posts
+  Post card partial — adds lock badge for private posts and
+  data-tags + clickable tag rectangles for the in-place tag filter
 -#}
-<article class="md-post md-post--excerpt">
+{% set ptags = [] if post.meta.private else (post.config.tags or post.meta.tags or []) %}
+<article class="md-post md-post--excerpt" data-tags="{{ ptags | map('lower') | join(',') }}">
   <header class="md-post__header">
     {% if post.authors %}
       <nav class="md-post__authors md-typeset">
@@ -54,6 +56,13 @@
         <span class="md-private">
           &#128274; private
         </span>
+      {% endif %}
+      {% if ptags %}
+        <nav class="md-post__tags">
+          {% for t in ptags %}
+            <a class="md-tag" data-tag="{{ t | lower }}" href="#{{ t | lower }}">{{ t }}</a>
+          {% endfor %}
+        </nav>
       {% endif %}
     </div>
   </header>

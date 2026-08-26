@@ -283,40 +283,77 @@ a.md-tag:hover {
   transform: translateY(-1px);
 }
 
+/* "all" rectangle: neutral fill when active */
+.tag-filter a.md-tag--active[data-tag=""] {
+  background-color: #f8f8f2;
+  color: #21222c;
+}
+
+/* card hidden by the active tag filter */
+article.md-post.post-hidden {
+  display: none !important;
+}
+
+/* "no posts with this tag yet" note */
+.tag-filter__empty {
+  margin: 0.2em 0 0 !important;
+  color: #9aa0b5;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+/* tag rectangles on each post card */
+.md-post__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  margin-top: 0.45em;
+}
+
+.md-post__tags a.md-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
 /* hover: fill with the family color, flip text dark for max contrast */
-.tag-filter a.md-tag[href*="thoughts" i]:hover,
-.tag-filter a.md-tag[href*="philosophy" i]:hover {
+.tag-filter a.md-tag[href*="thoughts" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="philosophy" i]:is(:hover, .md-tag--active) {
   background-color: #bd93f9;
   color: #21222c;
 }
 
-.tag-filter a.md-tag[href*="portfolio" i]:hover,
-.tag-filter a.md-tag[href*="project-write-up" i]:hover {
+.tag-filter a.md-tag[href*="portfolio" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="project-write-up" i]:is(:hover, .md-tag--active) {
   background-color: #ffb86c;
   color: #21222c;
 }
 
-.tag-filter a.md-tag[href*="snippet" i]:hover,
-.tag-filter a.md-tag[href*="til" i]:hover,
-.tag-filter a.md-tag[href*="learning-notes" i]:hover,
-.tag-filter a.md-tag[href*="paper-notes" i]:hover {
+.tag-filter a.md-tag[href*="snippet" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="til" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="learning-notes" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="paper-notes" i]:is(:hover, .md-tag--active) {
   background-color: #50fa7b;
   color: #21222c;
 }
 
-.tag-filter a.md-tag[href*="problem-solving" i]:hover,
-.tag-filter a.md-tag[href*="leetcode" i]:hover,
-.tag-filter a.md-tag[href*="advent-of-code" i]:hover {
+.tag-filter a.md-tag[href*="problem-solving" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="leetcode" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="advent-of-code" i]:is(:hover, .md-tag--active) {
   background-color: #ff5555;
   color: #21222c;
 }
 
-.tag-filter a.md-tag[href*="nlp" i]:hover,
-.tag-filter a.md-tag[href*="llm" i]:hover,
-.tag-filter a.md-tag[href*="pytorch" i]:hover,
-.tag-filter a.md-tag[href*="deep-learning" i]:hover,
-.tag-filter a.md-tag[href*="low-level" i]:hover,
-.tag-filter a.md-tag[href*="agentic-ai" i]:hover {
+.tag-filter a.md-tag[href*="nlp" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="llm" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="pytorch" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="deep-learning" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="low-level" i]:is(:hover, .md-tag--active),
+.tag-filter a.md-tag[href*="agentic-ai" i]:is(:hover, .md-tag--active) {
   background-color: #8be9fd;
   color: #21222c;
 }

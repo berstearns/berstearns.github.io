@@ -29,12 +29,15 @@ extra_css:
 
 extra_javascript:
   - assets/js/portfolio.js
+  - assets/js/tag-filter.js
 
 plugins:
   - search
   - blog:
       blog_dir: blog
       post_url_format: "{slug}"
+      # one page: the client-side tag filter must see every post card
+      pagination_per_page: 50
       draft_on_serve: !ENV [DRAFTS, true]
       categories_allowed:
         - General
