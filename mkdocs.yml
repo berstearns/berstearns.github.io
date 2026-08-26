@@ -59,6 +59,11 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.superfences
   - pymdownx.details
+  # term-highlight strategy: ==mark== ^^ins^^ ~~del~~ ++ctrl+c++
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.keys
   - toc:
       permalink: true
 

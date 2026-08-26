@@ -1,4 +1,14 @@
-/* Dracula color scheme for mkdocs-material */
+/* Dracula color scheme for mkdocs-material
+ *
+ * "dracula" is a CUSTOM scheme: every Material CSS variable we do not set
+ * here silently falls back to the LIGHT theme values in :root — dark text
+ * on our dark background. So this block overrides the complete variable
+ * set (body, code syntax, tables, mark/kbd/del/ins, admonitions, warning).
+ *
+ * Contrast targets on #282a36 (WCAG): body #f8f8f2 ≈ 12.6:1 (AAA),
+ * secondary #c9cbd8 ≈ 9:1 (AAA), links #8be9fd ≈ 9.6:1 (AAA),
+ * headings #bd93f9 ≈ 5:1 (AA large text).
+ */
 
 [data-md-color-scheme="dracula"] {
   /* Header & tabs: dark bg with bright text */
@@ -15,28 +25,115 @@
 
   /* Body */
   --md-default-fg-color: #f8f8f2;
-  --md-default-fg-color--light: #ccc;
-  --md-default-fg-color--lighter: #999;
+  --md-default-fg-color--light: #c9cbd8;
+  --md-default-fg-color--lighter: #9aa0b5;
   --md-default-fg-color--lightest: rgba(248, 248, 242, 0.12);
   --md-default-bg-color: #282a36;
   --md-default-bg-color--light: #343746;
   --md-default-bg-color--lighter: #3e4153;
   --md-default-bg-color--lightest: #44475a;
 
-  /* Code */
-  --md-code-fg-color: #f8f8f2;
-  --md-code-bg-color: #44475a;
-  --md-code-hl-color: rgba(255, 121, 198, 0.15);
-
-  /* Links */
+  /* Typeset (body copy — explicit, never inherit light values) */
+  --md-typeset-color: #f8f8f2;
   --md-typeset-a-color: #8be9fd;
+
+  /* Code blocks */
+  --md-code-fg-color: #f8f8f2;
+  --md-code-bg-color: #21222c;
+  --md-code-bg-color--light: #2b2d3a;
+  --md-code-bg-color--lighter: #343746;
+  --md-code-hl-color: #ff79c6;
+  --md-code-hl-color--light: rgba(255, 121, 198, 0.15);
+
+  /* Code syntax highlighting — official Dracula token colors */
+  --md-code-hl-keyword-color: #ff79c6;
+  --md-code-hl-operator-color: #ff79c6;
+  --md-code-hl-string-color: #f1fa8c;
+  --md-code-hl-number-color: #bd93f9;
+  --md-code-hl-constant-color: #bd93f9;
+  --md-code-hl-function-color: #50fa7b;
+  --md-code-hl-name-color: #f8f8f2;
+  --md-code-hl-variable-color: #8be9fd;
+  --md-code-hl-punctuation-color: #c9cbd8;
+  --md-code-hl-comment-color: #7b88bd;
+  --md-code-hl-special-color: #ffb86c;
+  --md-code-hl-generic-color: #ffb86c;
+
+  /* Tables: borders were near-black (light-theme leak) — now visible */
+  --md-typeset-table-color: rgba(248, 248, 242, 0.16);
+  --md-typeset-table-color--light: rgba(248, 248, 242, 0.06);
+
+  /* mark / ins / del / kbd */
+  --md-typeset-mark-color: rgba(241, 250, 140, 0.25);
+  --md-typeset-ins-color: rgba(80, 250, 123, 0.18);
+  --md-typeset-del-color: rgba(255, 85, 85, 0.22);
+  --md-typeset-kbd-color: #343746;
+  --md-typeset-kbd-accent-color: #44475a;
+  --md-typeset-kbd-border-color: #191a21;
+
+  /* Admonitions & warnings */
+  --md-admonition-fg-color: #f8f8f2;
+  --md-admonition-bg-color: #343746;
+  --md-warning-fg-color: #282a36;
+  --md-warning-bg-color: #f1fa8c;
 
   /* Footer */
   --md-footer-bg-color: #21222c;
   --md-footer-bg-color--dark: #191a21;
   --md-footer-fg-color: #f8f8f2;
-  --md-footer-fg-color--light: #999;
-  --md-footer-fg-color--lighter: #666;
+  --md-footer-fg-color--light: #c9cbd8;
+  --md-footer-fg-color--lighter: #9aa0b5;
+}
+
+/* ── Term-highlight strategy ──────────────────────────────────────────
+ * One visual voice per kind of emphasis, consistent across all posts:
+ *   ==key concept==   -> yellow highlighter (pymdownx.mark)
+ *   **strong point**  -> pure white, heavier than body text
+ *   `identifier`      -> green chip (inline code = technical terms)
+ *   [link](...)       -> cyan, pink on hover (Material accent)
+ *   ++ctrl+c++        -> real keycaps (pymdownx.keys)
+ *   ~~old idea~~      -> struck through on red tint (pymdownx.tilde)
+ *   ^^new idea^^      -> underlined on green tint (pymdownx.caret)
+ */
+
+.md-typeset strong {
+  color: #ffffff;
+}
+
+.md-typeset mark {
+  color: #f8f8f2;
+  padding: 0 0.2em;
+  border-radius: 3px;
+}
+
+/* inline code only (not fenced blocks): green = "this is a technical term" */
+.md-typeset :not(pre) > code {
+  color: #50fa7b;
+  background-color: #343746;
+  border-radius: 4px;
+}
+
+/* keep links inside inline code readable */
+.md-typeset a code {
+  color: #8be9fd;
+}
+
+/* headings: white h1, purple h2 with a faint rule, bright h3 */
+.md-typeset h1 {
+  color: #f8f8f2;
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  color: #bd93f9;
+  font-weight: 700;
+  padding-bottom: 0.15em;
+  border-bottom: 1px solid rgba(189, 147, 249, 0.25);
+}
+
+.md-typeset h3,
+.md-typeset h4 {
+  color: #e4d7fd;
 }
 
 /* ── Post card backgrounds by category ── */
@@ -98,6 +195,75 @@ a.md-tag[href*="nlp" i] {
   background-color: rgba(189, 147, 249, 0.15);
   color: #bd93f9;
   border: 1px solid rgba(189, 147, 249, 0.3);
+}
+
+/* ── Tag families: one color per post TYPE, topics stay neutral ──
+ *   thoughts/philosophy        -> purple
+ *   portfolio/project-write-up -> orange
+ *   snippet/til/notes          -> green
+ *   problems/leetcode/aoc      -> red
+ */
+
+a.md-tag[href*="thoughts" i],
+a.md-tag[href*="philosophy" i] {
+  background-color: rgba(189, 147, 249, 0.15);
+  color: #d6bdfc;
+  border: 1px solid rgba(189, 147, 249, 0.35);
+}
+
+a.md-tag[href*="portfolio" i],
+a.md-tag[href*="project-write-up" i] {
+  background-color: rgba(255, 184, 108, 0.15);
+  color: #ffb86c;
+  border: 1px solid rgba(255, 184, 108, 0.35);
+}
+
+a.md-tag[href*="snippet" i],
+a.md-tag[href*="til" i],
+a.md-tag[href*="learning-notes" i],
+a.md-tag[href*="paper-notes" i] {
+  background-color: rgba(80, 250, 123, 0.12);
+  color: #50fa7b;
+  border: 1px solid rgba(80, 250, 123, 0.3);
+}
+
+a.md-tag[href*="problem-solving" i],
+a.md-tag[href*="leetcode" i],
+a.md-tag[href*="advent-of-code" i] {
+  background-color: rgba(255, 85, 85, 0.14);
+  color: #ff8787;
+  border: 1px solid rgba(255, 85, 85, 0.35);
+}
+
+a.md-tag:hover {
+  color: #ffffff;
+}
+
+/* ── Explicit tag-filter bar (blog index + tags page) ── */
+
+.tag-filter {
+  margin: 1em 0 1.6em;
+}
+
+.tag-filter__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4em;
+  margin-bottom: 0.5em;
+}
+
+.tag-filter__label {
+  color: #9aa0b5;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 6.5rem;
+}
+
+.tag-filter a.md-tag {
+  margin: 0;
 }
 
 /* ── Private post gate overlay ── */
