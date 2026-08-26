@@ -19,6 +19,7 @@ theme:
 hooks:
   - hooks/hide_private.py
   - hooks/nojekyll.py
+  - hooks/cache_bust.py
 
 extra:
   private_code: "opensesame"
