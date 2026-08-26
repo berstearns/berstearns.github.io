@@ -5,7 +5,10 @@ authors:
 categories:
   - Papers
 tags:
-  - NLP, LLM
+  - paper-notes
+  - nlp
+  - llm
+  - research
 comments: true
 ---
 

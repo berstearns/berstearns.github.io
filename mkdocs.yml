@@ -40,6 +40,9 @@ plugins:
         - Papers
         - Learning
         - Hindi
+        - Projects
+        - Snippets
+        - Problems
   - tags
   - markmap:
       base_path: mindmaps
@@ -64,3 +67,4 @@ nav:
   - Portfolio: portfolio/index.md
   - Blog:
       - blog/index.md
+  - Tags: tags.md

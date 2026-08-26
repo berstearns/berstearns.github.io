@@ -7,6 +7,7 @@ Pages with `noindex: true` (the /zenitsu/ index itself) also get
 robots-noindex and are removed from sitemap.
 """
 import gzip
+import json
 import os
 import re
 
@@ -16,13 +17,24 @@ _private_posts: list[dict] = []
 
 def on_page_context(context, page, config, nav, **kwargs):
     if hasattr(page, "posts") and page.posts is not None:
+        had_posts = len(page.posts) > 0
         page.posts = [p for p in page.posts if not p.meta.get("private", False)]
+        # a view (category/archive page) whose posts were ALL private would
+        # still leak its existence via search/sitemap — hide it entirely
+        if had_posts and not page.posts:
+            _hidden_urls.add("/" + page.url.lstrip("/"))
+            page.meta["noindex"] = True
     return context
 
 
 def on_page_markdown(markdown, page, config, files, **kwargs):
+    # Runs at default priority (0), i.e. BEFORE the material tags plugin's
+    # collector at priority -50 — private pages must never reach the tags
+    # index, the search index, or any tag listing.
     if page.meta.get("private") or page.meta.get("noindex"):
         _hidden_urls.add("/" + page.url.lstrip("/"))
+        page.meta.pop("tags", None)
+        page.meta["search"] = {"exclude": True}
     if page.meta.get("private"):
         _private_posts.append({
             "url": "/" + page.url.lstrip("/"),
@@ -77,6 +89,19 @@ def on_post_build(config, **kwargs):
 
     if not _hidden_urls:
         return
+
+    # belt-and-braces: purge hidden URLs from the search index even if the
+    # per-page `search: exclude` meta was missed for some page type
+    search_idx = os.path.join(site_dir, "search", "search_index.json")
+    if os.path.exists(search_idx):
+        with open(search_idx, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        data["docs"] = [
+            e for e in data.get("docs", [])
+            if "/" + e.get("location", "").split("#")[0].lstrip("/") not in _hidden_urls
+        ]
+        with open(search_idx, "w", encoding="utf-8") as f:
+            json.dump(data, f)
 
     for feed in ("feed_rss_created.xml", "feed_rss_updated.xml"):
         path = os.path.join(site_dir, feed)

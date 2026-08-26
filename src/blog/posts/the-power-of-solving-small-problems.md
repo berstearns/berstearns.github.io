@@ -4,5 +4,9 @@ authors:
   - bernardo
 categories:
   - General
+tags:
+  - thoughts
+  - philosophy
+  - problem-solving
 comments: true
 ---

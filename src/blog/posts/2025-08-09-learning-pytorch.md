@@ -5,7 +5,10 @@ authors:
 categories:
   - Learning
 tags:
-  - PyTorch
+  - learning-notes
+  - roadmap
+  - pytorch
+  - deep-learning
 comments: true
 ---
 

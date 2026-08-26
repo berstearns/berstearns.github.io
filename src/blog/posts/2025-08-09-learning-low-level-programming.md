@@ -5,7 +5,10 @@ authors:
 categories:
   - Learning
 tags:
-  - low-level programming
+  - learning-notes
+  - low-level
+  - systems-programming
+  - roadmap
 comments: true
 ---
 

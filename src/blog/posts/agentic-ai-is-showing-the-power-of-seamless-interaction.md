@@ -4,6 +4,9 @@ authors:
   - bernardo
 categories:
   - General
+tags:
+  - thoughts
+  - agentic-ai
 draft: true
 comments: true
 ---
