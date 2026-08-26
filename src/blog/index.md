@@ -1,9 +1,5 @@
 # Blog
 
-Welcome to my blog. I write about NLP, machine learning, and things I'm learning along the way.
-
-**Filter by tag:**
-
 <nav class="tag-filter">
   <p class="tag-filter__group">
     <span class="tag-filter__label">thoughts</span>
@@ -38,3 +34,5 @@ Welcome to my blog. I write about NLP, machine learning, and things I'm learning
     <a class="md-tag" href="/tags/#tag:agentic-ai">agentic-ai</a>
   </p>
 </nav>
+
+Welcome to my blog. I write about NLP, machine learning, and things I'm learning along the way.
