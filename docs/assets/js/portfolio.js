@@ -16,7 +16,6 @@ const PROFILE = {
     { key: "Role", value: "Research Associate & part-time PhD, Univ. of Galway" },
     { key: "GitHub", value: "berstearns", href: "https://github.com/berstearns" },
     { key: "Blog", value: "berstearns.github.io", href: "/" },
-    { key: "Email", value: "[removed]", href: "mailto:[removed]" },
   ],
   stack: [
     "Python", "PyTorch", "Transformers", "spaCy", "NLTK",
