@@ -41,13 +41,17 @@ title: CV
 
 ## Education
 
-**PhD (part-time), Machine Learning / NLP** — *University of Galway, Ireland* · `2021–Sep 2026`
+**University of Galway** — Ireland
+:   *Part-Time PhD in Machine Learning (NLP)*, 2021–Sep 2026
+    — Thesis: **Fine-Tuning LLMs for Simulating Second Language Learner Writing**
+    — beat fine-tuned BERT by **21%** and ChatGPT-class models by **55%** on high-stakes proficiency assessment
 
-- Thesis: language models reproducing learner writing and its error patterns — beat fine-tuned BERT by **21%** and ChatGPT-class models by **55%** on high-stakes proficiency assessment.
+**Baruch College, CUNY** — New York, USA
+:   *Exchange Student, Computational Mathematics*, 2014–2015 — **Fulbright Scholarship**
 
-**Exchange, Computational Mathematics** — *Baruch College, CUNY, NYC* · `2014–2015` — **Fulbright Scholarship**
-
-**BSc, Mathematics & Earth Sciences** — *Federal University of Rio de Janeiro (UFRJ), Brazil* · `2013–2016`
+**Federal University of Rio de Janeiro (UFRJ)** — Brazil
+:   *BSc, Mathematics and Earth Sciences*, 2013–2016
+    — Thesis: Boosting Methods for Scholar Performance Prediction
 
 ## Skills
 
