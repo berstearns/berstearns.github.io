@@ -1,4 +1,4 @@
-# Blog — notes to self, shared in case they help
+# Blog — notes to myself, hopefully useful to you
 
 <nav class="tag-filter">
   <p class="tag-filter__group">
