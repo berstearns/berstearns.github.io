@@ -16,11 +16,11 @@ comments: true
 
 # Hive Mind — a feed algorithm you own (project write-up)
 
-**TL;DR:**
+!!! abstract "TL;DR"
 
-- a browser extension that uses your recommendation system model to filter major feed platforms.
-- trained on your own annotations and those of a small circle of people you trust.
-- all served on your own compute.
+    - a **browser extension** that uses your own recommendation model to filter major feed platforms.
+    - trained on **your annotations** and those of a small circle of people you trust.
+    - all served on **your own compute**.
 
 <!-- more -->
 

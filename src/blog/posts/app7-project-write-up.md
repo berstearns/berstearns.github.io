@@ -16,10 +16,11 @@ comments: true
 
 # App7 — language learning from reading (project write-up)
 
-**TL;DR:** a Kotlin Multiplatform comic reader (Android + desktop) where every
-speech bubble is a lesson: OCR-enriched pages, tap-to-annotate tokens,
-machine-translation zoom — built solo in ~5 months, shipped behind a
-mechanical release gate.
+!!! abstract "TL;DR"
+
+    - a **Kotlin Multiplatform comic reader** (Android + desktop) where every speech bubble is a lesson.
+    - **OCR-enriched pages**, tap-to-annotate tokens, machine-translation zoom.
+    - built solo in **~5 months**, shipped behind a mechanical release gate.
 
 <!-- more -->
 

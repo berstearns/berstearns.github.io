@@ -136,6 +136,113 @@
   color: #e4d7fd;
 }
 
+/* list bullets take the accent instead of default gray */
+.md-typeset ul li::marker {
+  color: #bd93f9;
+}
+
+/* ── Admonitions (incl. the TL;DR card) in Dracula colors ──
+ * Material hardcodes light-blue-ish colors per type; re-skin the ones
+ * we use. TL;DR = `!!! abstract "TL;DR"` -> the purple signature card.
+ */
+
+.md-typeset .admonition {
+  border-width: 0 0 0 3px;
+  border-radius: 6px;
+  background-color: #313341;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* abstract / summary / tldr: purple */
+.md-typeset .admonition.abstract,
+.md-typeset .admonition.summary,
+.md-typeset .admonition.tldr {
+  border-color: #bd93f9;
+}
+.md-typeset .abstract > .admonition-title,
+.md-typeset .summary > .admonition-title,
+.md-typeset .tldr > .admonition-title {
+  background-color: rgba(189, 147, 249, 0.14);
+  color: #d6bdfc;
+}
+.md-typeset .abstract > .admonition-title::before,
+.md-typeset .summary > .admonition-title::before,
+.md-typeset .tldr > .admonition-title::before {
+  background-color: #bd93f9;
+}
+
+/* note / info: cyan */
+.md-typeset .admonition.note,
+.md-typeset .admonition.info {
+  border-color: #8be9fd;
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .info > .admonition-title {
+  background-color: rgba(139, 233, 253, 0.12);
+  color: #8be9fd;
+}
+.md-typeset .note > .admonition-title::before,
+.md-typeset .info > .admonition-title::before {
+  background-color: #8be9fd;
+}
+
+/* tip / success: green */
+.md-typeset .admonition.tip,
+.md-typeset .admonition.success {
+  border-color: #50fa7b;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .success > .admonition-title {
+  background-color: rgba(80, 250, 123, 0.1);
+  color: #50fa7b;
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .success > .admonition-title::before {
+  background-color: #50fa7b;
+}
+
+/* warning: orange */
+.md-typeset .admonition.warning {
+  border-color: #ffb86c;
+}
+.md-typeset .warning > .admonition-title {
+  background-color: rgba(255, 184, 108, 0.12);
+  color: #ffb86c;
+}
+.md-typeset .warning > .admonition-title::before {
+  background-color: #ffb86c;
+}
+
+/* danger / failure / bug: red-pink */
+.md-typeset .admonition.danger,
+.md-typeset .admonition.failure,
+.md-typeset .admonition.bug {
+  border-color: #ff5555;
+}
+.md-typeset .danger > .admonition-title,
+.md-typeset .failure > .admonition-title,
+.md-typeset .bug > .admonition-title {
+  background-color: rgba(255, 85, 85, 0.12);
+  color: #ff8787;
+}
+.md-typeset .danger > .admonition-title::before,
+.md-typeset .failure > .admonition-title::before,
+.md-typeset .bug > .admonition-title::before {
+  background-color: #ff5555;
+}
+
+/* quote: muted */
+.md-typeset .admonition.quote {
+  border-color: #9aa0b5;
+}
+.md-typeset .quote > .admonition-title {
+  background-color: rgba(154, 160, 181, 0.12);
+  color: #c9cbd8;
+}
+.md-typeset .quote > .admonition-title::before {
+  background-color: #9aa0b5;
+}
+
 /* ── Post card backgrounds by category ── */
 
 article.md-post {
