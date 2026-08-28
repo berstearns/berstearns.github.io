@@ -158,9 +158,63 @@
  * a slight perspective tilt.
  */
 
+/* ── Home nav: Posts / CV / Streams cards under "About me" ── */
+
+.home-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  margin: 1.6em 0 0.6em;
+}
+
+.home-nav__card {
+  flex: 1 1 12rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  padding: 0.9em 1.1em;
+  border-radius: 6px;
+  border-left: 3px solid;
+  background-color: #313341;
+  color: #f8f8f2 !important;
+}
+
+.home-nav__card--posts   { border-color: #8be9fd; }
+.home-nav__card--cv      { border-color: #bd93f9; }
+.home-nav__card--streams { border-color: #ffb86c; }
+
+.home-nav__title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.home-nav__card--posts   .home-nav__title { color: #8be9fd; }
+.home-nav__card--cv      .home-nav__title { color: #d6bdfc; }
+.home-nav__card--streams .home-nav__title { color: #ffb86c; }
+
+.home-nav__desc {
+  color: #c9cbd8;
+  font-size: 0.7rem;
+}
+
+.home-nav__soon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.4em;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  background: rgba(248, 248, 242, 0.1);
+  color: #9aa0b5;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* light source top-left -> shadows fall down AND to the right */
 article.md-post,
 .md-typeset .admonition,
+.home-nav__card,
 .tag-filter {
   box-shadow:
     inset 1px 1px 0 rgba(248, 248, 242, 0.05),
@@ -171,7 +225,8 @@ article.md-post,
 }
 
 article.md-post:hover,
-.md-typeset .admonition:hover {
+.md-typeset .admonition:hover,
+.home-nav__card:hover {
   transform: perspective(900px) rotateX(0.6deg) rotateY(-0.4deg) translateY(-4px);
   box-shadow:
     inset 1px 1px 0 rgba(248, 248, 242, 0.08),
