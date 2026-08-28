@@ -1,3 +1,9 @@
+{#-
+  Material includes this partial on EVERY page, unconditionally — the
+  guard below is what limits comments to pages that opt in with
+  `comments: true` in their front matter (the home page has none).
+-#}
+{% if page.meta.comments %}
 <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
 
 <script src="https://utteranc.es/client.js"
@@ -7,3 +13,4 @@
         crossorigin="anonymous"
         async>
 </script>
+{% endif %}
