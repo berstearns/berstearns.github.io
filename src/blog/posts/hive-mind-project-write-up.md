@@ -16,10 +16,10 @@ comments: true
 
 # Hive Mind — a feed algorithm you own (project write-up)
 
-**TL;DR:** a browser extension that replaces Big-Tech feed ranking with models
-trained on annotations from a small circle of people you trust — private by
-construction, improving with every correction. This post is the design
-write-up; the build is in progress.
+**TL;DR:** 
+- a browser extension that uses your recommendation system model to filter major feeds platforms.
+- trained on your own annotations and from a small circle of people you trust. 
+- all served on your computer
 
 <!-- more -->
 
