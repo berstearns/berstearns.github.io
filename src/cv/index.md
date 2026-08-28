@@ -53,6 +53,14 @@ title: CV
 :   *BSc, Mathematics and Earth Sciences*, 2013–2016
     — Thesis: Boosting Methods for Scholar Performance Prediction
 
+## Awards
+
+**1st place — [Terra-Insight Hackathon](https://www.insight-centre.org/save-the-bees-and-support-biodiversity-at-the-terra-insight-hackathon-on-feb-25th/)** — *Insight SFI Centre for Data Analytics, University of Galway* · `Feb 2023`
+
+- Won the **€1,000 first prize** for classifying Argentinian land use (soybean, maize, sunflower, forest, urban) from [ESA Sentinel-2](https://sentiwiki.copernicus.eu/web/s2-mission) temporal satellite observations — in support of *Supporting bee-friendly agriculture in Argentina*, an Insight project funded by the **National Geographic Society**.
+
+**Fulbright Scholarship** — *Baruch College, CUNY, New York* · `2014–2015`
+
 ## Skills
 
 - **LLM training & serving:** pre-training, fine-tuning (LoRA/PEFT, DPO); vLLM.
