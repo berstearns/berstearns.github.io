@@ -57,7 +57,7 @@ title: CV
 
 **2nd place overall — [BEA 2026 Shared Task](https://aclanthology.org/2026.bea-1.75/)** — *L1-Aware Vocabulary Difficulty Prediction, BEA @ ACL 2026* · `2026`
 
-- **Implemented everything solo** — modeling, code, and the final submission, with technical discussions with colleagues (team `uogal`, University of Galway): an ensemble of eight multilingual encoders with NMT augmentation — 2nd place overall on the closed track in the [official test results](https://github.com/britishcouncil/bea2026st/blob/main/results/results_summary_test.md).
+- Designed, built, and submitted the entire system **single-handedly** — refined through technical discussions with colleagues (team `uogal`, University of Galway): an ensemble of eight multilingual encoders with NMT augmentation — 2nd place overall on the closed track in the [official test results](https://github.com/britishcouncil/bea2026st/blob/main/results/results_summary_test.md).
 
 **1st place — [Terra-Insight Hackathon](https://www.insight-centre.org/save-the-bees-and-support-biodiversity-at-the-terra-insight-hackathon-on-feb-25th/)** — *Insight SFI Centre for Data Analytics, University of Galway* · `Feb 2023`
 
