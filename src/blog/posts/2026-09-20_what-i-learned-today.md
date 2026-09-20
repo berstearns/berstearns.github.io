@@ -12,14 +12,11 @@ slug: what-i-learned-today-2026-09-20
 
 <!-- more -->
 
-- compounding micro nuggets is what matters the most in learning progress.
-  - so if you are "not learning nothing new". start decomposing yur learning goals into tiny nuggets
-- revising the XOR trick.
-  - XOR -> Xclusive OR (duh. obvious.)
-  - xor is usually implemented bitiwise
-  - X ^ 0 = X
-    - because 0 is 00000 XOR = 1 will just happen when the X bit is 1
-    - then the remainder cases is always 0 | 0 = 0 
-  - X ^ X  = 0
-    - their bits value will always match so they will never be exclusively a OR
-  - 
+- Compounding micro nuggets is what matters the most in learning progress.
+    - If you're not learning anything new, start decomposing your learning goals into tiny nuggets.
+
+- Revising the XOR trick.
+    - XOR → Exclusive OR (duh, obvious.)
+    - Usually implemented bitwise
+    - `X ^ 0 = X` — because 0 is 00000, so XOR with 1 happens when the X bit is 1; otherwise it's always 0
+    - `X ^ X = 0` — bits always match so they'll never be exclusively OR
