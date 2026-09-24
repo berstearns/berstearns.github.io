@@ -910,6 +910,13 @@
 <li><code>X ^ X = 0</code> — bits always match so they'll never be exclusively OR</li>
 </ul>
 </li>
+<li>Revising the llm self-attention math trick<ul>
+<li>XOR → Exclusive OR (duh, obvious.)</li>
+<li>Usually implemented bitwise</li>
+<li><code>X ^ 0 = X</code> — because 0 is 00000, so XOR with 1 happens when the X bit is 1; otherwise it's always 0</li>
+<li><code>X ^ X = 0</code> — bits always match so they'll never be exclusively OR</li>
+</ul>
+</li>
 </ul>
 
 
